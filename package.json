@@ -1,0 +1,37 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run serve",
+    "build": "npm run build-ts && npm run tslint",
+    "build-ts": "tsc",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "serve": "node dist/index.js"
+  },
+  "author": "Vladimir Nevynnyi",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^3.1.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "m3u8stream": "^0.6.3",
+    "path": "^0.12.7",
+    "progress-stream": "^2.0.0",
+    "s": "^1.0.0",
+    "sanitize-filename": "^1.6.3",
+    "save": "^2.4.0",
+    "ytdl-core": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/async": "^3.0.3",
+    "@types/fluent-ffmpeg": "^2.1.13",
+    "@types/node": "^13.1.4",
+    "@types/progress-stream": "^2.0.0",
+    "cross-env": "^6.0.3",
+    "nodemon": "^2.0.4",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.6"
+  }
+}
