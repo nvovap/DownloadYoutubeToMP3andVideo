@@ -222,16 +222,18 @@ export class YoutubeDownloader extends EventEmitter {
             }
 
             // Derive file name, if given, use it, if not, from video title
-            const fileName = (task.fileName ? self.outputPath + '/' + task.fileName : self.outputPath + '/' + (sanitize(videoTitle) || info.video_id) + '.mp3');
+            const fileName = (task.fileName ? self.outputPath + '/' + task.fileName : self.outputPath + '/' + (sanitize(videoTitle) || info.vid) + '.mp3');
 
             try {
-                const info = await ytdl.getInfo(videoUrl, { quality: self.youtubeVideoQuality });
+                const info = await ytdl.getInfo(videoUrl);
 
                 // Stream setup
-                const stream = ytdl.downloadFromInfo(info, {
-                    quality: self.youtubeVideoQuality,
-                    requestOptions: self.requestOptions
-                });
+                const stream = ytdl.downloadFromInfo(info,
+                //    {
+                //    quality: self.youtubeVideoQuality,
+                //    requestOptions: self.requestOptions
+                // }
+                );
 
                 stream.on('response', function (httpResponse) {
 
@@ -284,7 +286,7 @@ export class YoutubeDownloader extends EventEmitter {
                     } else {
                         const writeStream = fs.createWriteStream(fileName);
 
-                        stream.pipe(writeStream);
+                        stream.pipe(str).pipe(writeStream);
                     }
 
                     const strVideo = progress({

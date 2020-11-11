@@ -15,13 +15,14 @@
   "dependencies": {
     "async": "^3.1.0",
     "fluent-ffmpeg": "^2.1.2",
-    "m3u8stream": "^0.6.3",
+    "m3u8stream": "^0.8.0",
     "path": "^0.12.7",
     "progress-stream": "^2.0.0",
     "s": "^1.0.0",
     "sanitize-filename": "^1.6.3",
     "save": "^2.4.0",
-    "ytdl-core": "^3.2.1"
+    "typescript": "^4.0.2",
+    "ytdl-core": "^4.0.3"
   },
   "devDependencies": {
     "@types/async": "^3.0.3",
@@ -31,7 +32,6 @@
     "cross-env": "^6.0.3",
     "nodemon": "^2.0.4",
     "ts-node": "^7.0.1",
-    "tslint": "^5.11.0",
-    "typescript": "^3.1.6"
+    "tslint": "^5.11.0"
   }
 }
